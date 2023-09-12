@@ -1,29 +1,15 @@
 const Koa = require('koa')
-const Router = require('koa-router')
+const { koaBody } = require('koa-body')
+const loadRouter = require('./routes')
+
+const config = require('./config/default')
 
 const app = new Koa()
-const router = new Router()
 
-router.get('/',(ctx,next)=>{
-  ctx.body = 'hello koa'
-})
+app.use(koaBody())
 
-router.get('/news',(ctx,next)=>{
-  ctx.body = '新闻'
-})
+loadRouter(app)
 
-router.get('/data',(ctx,next)=>{
-  console.log(ctx);
-  ctx.body = ctx
-})
-
-// app.use(async(ctx)=>{
-//   ctx.body = 'hello'
-// })
-
-app.use(router.routes())
-app.use(router.allowedMethods())
-
-app.listen(3600,()=>{
-  console.log('Server is running on http://localhost:3600')
+app.listen(config.port, () => {
+  console.log(`Server is running on http://localhost:${config.port}`)
 })

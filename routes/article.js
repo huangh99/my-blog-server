@@ -1,11 +1,11 @@
 const Router = require('koa-router')
 const router = new Router({ prefix: '/article' })
 
-const ArticleController = require('../controllers/article')
+const ArticleController = require('../controllers/article_controller')
 
 
-router.get('/testGet', ArticleController.testGet) // 获取所有的 tag 列表
+router.get('/page', ArticleController.getArticlePage) // 获取所有文章列表
 
-router.post('/testPost', ArticleController.testPost) // 注册
+router.post('/add', ArticleController.createArticle) // 新增
 
 module.exports = router

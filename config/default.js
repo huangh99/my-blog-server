@@ -1,5 +1,5 @@
-const config = {
-  port: 3600
-}
+const dotenv = require('dotenv')
 
-module.exports = config
+dotenv.config()
+
+module.exports = process.env

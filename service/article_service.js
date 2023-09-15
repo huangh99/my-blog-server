@@ -3,7 +3,18 @@ class ArticleService{
   async createArticleInfo(title,content){
     try {
       const res = await ArticleModel.create({title,content})
-      return res.dataValues
+      return res
+    } catch (error) {
+      log.error(error)
+    }
+  }
+
+  async getArticlePage(){
+    try {
+      const res = await ArticleModel.findAll({
+        attributes: ['title', 'content']
+      })
+      return res
     } catch (error) {
       log.error(error)
     }

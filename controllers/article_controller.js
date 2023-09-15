@@ -1,15 +1,22 @@
-const { createArticleInfo } = require('../service/article_service')
+const { createArticleInfo, getArticlePage } = require('../service/article_service')
 
 class ArticleController {
-  async getArticlePage(ctx){
-    const res = await getArticlePage
+  async queryArticle(ctx){
+    const res = await getArticlePage()
+    ctx.body = {
+      code:200,
+      result:res
+    }
   }
 
   async createArticle(ctx) {
     const {title,content} = ctx.request.body
     const res = await createArticleInfo(title,content)
 
-    ctx.body = res
+    ctx.body = {
+      code:200,
+      result:res
+    }
   }
 
   async testPost(ctx) {

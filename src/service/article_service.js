@@ -1,4 +1,4 @@
-const ArticleModel = require('../model/article_model')
+const ArticleModel = require('@/model/article_model')
 class ArticleService{
   async createArticleInfo(title,content){
     try {

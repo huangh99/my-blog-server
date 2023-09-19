@@ -1,4 +1,4 @@
-const { createUser } = require('../service/user')
+const { createUser } = require('@/service/user')
 
 class UserController {
   async testGet(ctx) {

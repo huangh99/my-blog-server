@@ -1,6 +1,6 @@
 const { DataTypes } = require('@sequelize/core')
 
-const sequelize = require('../db/sequelize')
+const sequelize = require('@/db/sequelize')
 
 const ArticleModel = sequelize.define(
   'article',

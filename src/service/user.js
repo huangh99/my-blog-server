@@ -1,4 +1,4 @@
-const User = require('../model/user')
+const User = require('@/model/user')
 
 class UserService{
   async createUser(username,password){

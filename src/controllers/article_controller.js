@@ -1,4 +1,4 @@
-const { createArticleInfo, getArticlePage } = require('../service/article_service')
+const { createArticleInfo, getArticlePage } = require('@/service/article_service')
 
 class ArticleController {
   async queryArticle(ctx){

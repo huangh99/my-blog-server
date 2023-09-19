@@ -4,21 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon main.js",
+    "dev": "nodemon src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@koa/cors": "^4.0.0",
     "@sequelize/core": "^7.0.0-alpha.28",
     "dotenv": "^16.3.1",
     "koa": "^2.14.2",
     "koa-body": "^6.0.1",
-    "koa-cors": "^0.0.16",
     "koa-router": "^12.0.0",
+    "koa-static": "^5.0.0",
+    "module-alias": "^2.2.3",
     "mysql2": "^3.6.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "_moduleAliases": {
+    "@": "./src"
   }
 }
